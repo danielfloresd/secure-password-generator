@@ -3,7 +3,7 @@
 
 ## Description
 
-This project aims to implement a website that generated a random password base on the following user input:
+This project aims to implement a website that generates a random password base on the following user input:
 
 * Length of the password. Length must be between 8 a 128 characters
 * Uppercase selection: Y/N
@@ -19,8 +19,8 @@ The website was implemented using JavaScript, HTML and CSS.
 <a href="https://www.owasp.org/index.php/Password_special_characters">List of Password Special Characters from the OWASP Foundation</a>
 
 ## Installation
-Source code can be downloaded at https://github.com/danielfdch/password-generator/archive/refs/heads/main.zip.
-Git repository located at git@github.com:danielfdch/password-generator.git 
+Source code can be downloaded at https://github.com/danielfdch/secure-password-generator/archive/refs/heads/main.zip.
+Git repository located at git@github.com:danielfdch/secure-password-generator.git 
 
 ## Usage
 To view the website, please visit https://danielfdch.github.io/password-generator/
