@@ -23,7 +23,7 @@ Source code can be downloaded at https://github.com/danielfdch/secure-password-g
 Git repository located at git@github.com:danielfdch/secure-password-generator.git 
 
 ## Usage
-To view the website, please visit https://danielfdch.github.io/password-generator/
+To view the website, please visit https://danielfdch.github.io/secure-password-generator/
 
 <img src="./assets/images/website.PNG" width="400" />
 
