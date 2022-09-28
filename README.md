@@ -15,8 +15,9 @@ The user should select at least one character type. Using the users input a rand
 
 The website was implemented using JavaScript, HTML and CSS.
 
-*Standard special characters: ' !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'
-<a href="https://www.owasp.org/index.php/Password_special_characters">List of Password Special Characters from the OWASP Foundation</a>
+<i>-Special characters: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</i>
+
+<a href="https://www.owasp.org/index.php/Password_special_characters" style="font-size:10px"><i>List of Password Special Characters from the OWASP Foundation </i></a>
 
 ## Installation
 Source code can be downloaded at https://github.com/danielfdch/secure-password-generator/archive/refs/heads/main.zip.

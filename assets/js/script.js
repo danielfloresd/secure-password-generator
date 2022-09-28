@@ -8,13 +8,13 @@
   -Special character selection: Y/N
 */
 
-//Define alphabet in upper and lower case
-var ALPHABET_UPPERCASE = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var ALPHABET_LOWERCASE = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//Define alphabet in lower and upper case
+const ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const ALPHABET_UPPERCASE = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 // Special characters: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-var SPECIAL = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+const SPECIAL = [' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~'];
 // Define numbers 
-var NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 const PASSWORD_LEN_MIN = 8;
 const PASSWORD_LEN_MAX = 128;
@@ -38,33 +38,42 @@ function generatePassword() {
   }
 
   // Customer input
-  isUpperCase = window.confirm("Use uppercase characters?");
   isLowerCase = window.confirm("Use lowercase characters?");
+  isUpperCase = window.confirm("Use uppercase characters?");
   isNumeric = window.confirm("Use numeric characters?");
   isSpecialChar = window.confirm("Use special characters?");
 
   // Check that at least one character type is selected
   if (!isUpperCase && !isLowerCase && !isNumeric && !isSpecialChar) {
-    window.alert("Must select at lease one set of characters (uppercase,lowecase,numeric or special)");
+    window.alert("Must select at lease one set of characters (lowecase,uppercase,numeric and/or special)");
     // Return empty password
     return password;
   }
 
   // Select characters based on type selected
-  if (isUpperCase) {
-    availableChars = availableChars.concat(ALPHABET_UPPERCASE);
-  }
+  // Lowercase selected
   if (isLowerCase) {
-    availableChars = availableChars.concat(ALPHABET_LOWERCASE);
+    availableChars = ALPHABET;
   }
+  // Uppercase selected
+  if (isUpperCase) {
+    availableChars = [...availableChars, ...ALPHABET_UPPERCASE];
+  }
+  // Numeric characters selected
   if (isNumeric) {
-    availableChars = availableChars.concat(NUMBERS);
+    availableChars = [...availableChars, ...NUMBERS];
   }
+  //Special characters selected
   if (isSpecialChar) {
-    availableChars = availableChars.concat(SPECIAL);
+    availableChars = [...availableChars, ...SPECIAL];
   }
 
-  window.alert("Generating password from the following character set:\n" + availableChars);
+  var confirm = window.confirm("Generating password from the following character set:\n" + availableChars.join("") + "\nPress OK to continue...");
+
+  //User cancel password generation
+  if (!confirm) {
+    return password;
+  }
   // Random password generation
   for (var i = 0; i < passwordLength; i++) {
     // Generate random character index
@@ -74,7 +83,6 @@ function generatePassword() {
     password = password + newChar;
   }
 
-  window.alert("Secure password sucessfully generated")
   return password;
 }
 
