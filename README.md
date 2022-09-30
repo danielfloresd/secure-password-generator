@@ -1,15 +1,15 @@
 
-# Password Generator
+# Secure Password Generator
 
 ## Description
 
 This project aims to implement a website that generates a random password base on the following user input:
 
 * Length of the password. Length must be between 8 a 128 characters
-* Uppercase selection: Y/N
-* Lowercase selection: Y/N
-* Numeric selection: Y/N
-* Special character selection: Y/N  
+* Uppercase selection: TRUE/FALSE
+* Lowercase selection: TRUE/FALSE
+* Numeric selection: TRUE/FALSE
+* Special character selection: TRUE/FALSE  
 
 The user should select at least one character type. Using the users input a random password is generated and displayed on the webpage.
 
