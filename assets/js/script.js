@@ -21,10 +21,10 @@ const PASSWORD_LEN_MAX = 128;
 
 function generatePassword() {
   var passwordLength = 0;
-  var isUpperCase = true;
-  var isLowerCase = true;
-  var isNumeric = true;
-  var isSpecialChar = true;
+  var isUpperCase = false;
+  var isLowerCase = false;
+  var isNumeric = false;
+  var isSpecial = false;
   var availableChars = [];
   var password = "";
 
@@ -41,10 +41,10 @@ function generatePassword() {
   isLowerCase = window.confirm("Use lowercase characters?");
   isUpperCase = window.confirm("Use uppercase characters?");
   isNumeric = window.confirm("Use numeric characters?");
-  isSpecialChar = window.confirm("Use special characters?");
+  isSpecial = window.confirm("Use special characters?");
 
   // Check that at least one character type is selected
-  if (!isUpperCase && !isLowerCase && !isNumeric && !isSpecialChar) {
+  if (!isUpperCase && !isLowerCase && !isNumeric && !isSpecial) {
     window.alert("Must select at lease one set of characters (lowecase,uppercase,numeric and/or special)");
     // Return empty password
     return password;
@@ -53,19 +53,26 @@ function generatePassword() {
   // Select characters based on type selected
   // Lowercase selected
   if (isLowerCase) {
+    // Add lowercase characters to selection list
     availableChars = ALPHABET;
   }
   // Uppercase selected
   if (isUpperCase) {
-    availableChars = [...availableChars, ...ALPHABET_UPPERCASE];
+    // Add upercase characters to selection list
+    // availableChars = [...availableChars, ...ALPHABET_UPPERCASE];
+    availableChars = availableChars.concat(ALPHABET_UPPERCASE);
   }
   // Numeric characters selected
   if (isNumeric) {
-    availableChars = [...availableChars, ...NUMBERS];
+    // Add numeric characters to selection list
+    // availableChars = [...availableChars, ...NUMBERS];
+    availableChars = availableChars.concat(NUMBERS);
   }
   //Special characters selected
-  if (isSpecialChar) {
-    availableChars = [...availableChars, ...SPECIAL];
+  if (isSpecial) {
+    // Add special characters to selection list
+    // availableChars = [...availableChars, ...SPECIAL];
+    availableChars = availableChars.concat(SPECIAL);
   }
 
   var confirm = window.confirm("Generating password from the following character set:\n" + availableChars.join("") + "\nPress OK to continue...");
