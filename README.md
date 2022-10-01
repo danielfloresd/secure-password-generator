@@ -20,7 +20,7 @@ The website was implemented using JavaScript, HTML and CSS.
 <a href="https://www.owasp.org/index.php/Password_special_characters" style="font-size:10px"><i>List of Password Special Characters from the OWASP Foundation </i></a>
 
 ## Installation
-Respository can be accessed at <a ref="https://github.com/danielfloresd/secure-password-generator/">danielfloresd</a> git account and source code can also be downloaded directly<a ref="https://github.com/danielfloresd/secure-password-generator/archive/refs/heads/main.zip"> here</a>. 
+Respository can be accessed at https://github.com/danielfloresd/secure-password-generator/. Source code direct download is located at https://github.com/danielfloresd/secure-password-generator/archive/refs/heads/main.zip
 
 ## Usage
 To view the website, please visit https://danielfloresd.github.io/secure-password-generator/
